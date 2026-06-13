@@ -52,10 +52,10 @@ in.
 
 ## References
 
-* prebuilt picotool (missing USB support)
-  https://github.com/raspberrypi/picotool
+* prebuilt picotool (missing USB support)<br>
+  https://github.com/raspberrypi/picotool<br>
   https://github.com/raspberrypi/pico-sdk-tools/releases
-* (Raspberry Pi Documentation)[https://www.raspberrypi.com/documentation/microcontrollers/?version=5A09D5312E22]
+* [Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/microcontrollers/?version=5A09D5312E22)
 
 
 

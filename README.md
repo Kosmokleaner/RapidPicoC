@@ -25,6 +25,8 @@ The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to targ
   > cd code
   > git clone git@github.com:Kosmokleaner/RapidPicoC.git
   > cd RapidPicoC
+  > chmod +x clean.sh
+  > chmod +x build.sh
 
 ## C code explained
 

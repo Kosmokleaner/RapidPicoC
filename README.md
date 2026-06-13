@@ -3,7 +3,7 @@
 
 Raspberry Pi Pico C starter project optimized for iteration time (no USB plugin and button pressing).
 
-* By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
+* By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh
   > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
 
 The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
@@ -15,7 +15,7 @@ The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to targ
  rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
  rp2350-riscv → Hazard3 RISC-V core
 
-* To change this, look for the following line in CMakeList.txt
+* To change this, look for the following line in CMakeList.txt, run ./clean.sh
   > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
 
 ## Hardware and Software requirements

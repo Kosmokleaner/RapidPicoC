@@ -31,8 +31,6 @@ int main()
 
         cnt++;
         printf("cnt:%d\n", cnt);
-        // sudo picotool load -x build/picow_blink.elf
-        // next: wait for command sent to device
-        // putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+		// connect with PUTTY for output
     }
 }

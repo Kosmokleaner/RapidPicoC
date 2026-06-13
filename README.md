@@ -20,14 +20,15 @@ Key lines for best iteration:
 
 # How to the code locally
 
-* Get the code from the terminal is one option (into Documents/code/RapidPicoC), omit "> "
+* Get the code from the terminal is one option (into Documents/code/RapidPicoC)
 ```
-  > cd ~/Documents<>
-  > mkdir code
-  > cd code
-  > cd RapidPicoC
-  > chmod +x clean.sh
-  > chmod +x build.sh
+  cd ~/Documents<>
+  mkdir code
+  cd code
+  git clone git@github.com:Kosmokleaner/RapidPicoC.git
+  cd RapidPicoC
+  chmod +x clean.sh
+  chmod +x build.sh
 ```
 
 ## C code explained
@@ -60,13 +61,9 @@ Key lines for best iteration:
 ```
   > ./build.sh
 ```
-* for profiling
+* for profiling the build time
 ```
-  > time ./build.sh
-  e.g. ...
-  > real 0m0.612s
-  > user 0m0.334s
-  > sys	 0m0.281s
+  time ./build.sh
 ```
  
 ## Method 1: Simple upload (physical)
@@ -83,13 +80,16 @@ We need "picotool" and I found prebuilt version but none of those had the requir
 
 * If needed / once
 ```
-  > sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
-  > git clone https://github.com/raspberrypi/picotool.git
-  > cd picotool
-  > mkdir build
-  > cd build
-  > cmake -DCMAKE_BUILD_TYPE=Release ..
-  > cmake --build . -j$(nproc)
+  cd ~/Documents
+  mkdir code
+  cd code
+  sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
+  git clone https://github.com/raspberrypi/picotool.git
+  cd picotool
+  mkdir build
+  cd build
+  cmake -DCMAKE_BUILD_TYPE=Release ..
+  cmake --build . -j$(nproc)
 ```
 
 * upload
@@ -110,8 +110,10 @@ We need "picotool" and I found prebuilt version but none of those had the requir
 <img width="341" height="319" alt="puttyUI" src="https://github.com/user-attachments/assets/e4fef307-3f3c-405b-a085-f6a6e60625ed" />
 
 * The app has USB stdin/stdout support because of the following lines in CMakeList.txt
+```
   > pico_enable_stdio_usb(picow_blink 1)
   > pico_enable_stdio_uart(picow_blink 0)
+```
 
 ## How to adapt for Pico 1 or Pico 2 (no W) or choose a different CPU architecture
 
@@ -130,17 +132,19 @@ We need "picotool" and I found prebuilt version but none of those had the requir
 
 ## Todo
 * setup
-  > source martin.sh
-  > 
-  > export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
-  > export PICO_EXTRAS_PATH=/home/username/Documents/code/picoaudio/pico-extras
-  > export PICO_EXAMPLES_PATH=/home/username/Documents/code/picoaudio/pico-examples
-  > export PICOTOOL_FETCH_FROM_GIT_PATH=/home/username/Documents/code/picotool
-  > export PICO_PLATFORM=rp2350-arm-s
-  > export PICO_BOARD=pico2
-  > export PICO_TOOLCHAIN_PATH=/usr/bin
-  > #export PICO_COMPILER=arm-none-eabi-gcc
-  > unset PICO_COMPILER
+```
+  source martin.sh
+  
+  export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
+  export PICO_EXTRAS_PATH=/home/username/Documents/code/picoaudio/pico-extras
+  export PICO_EXAMPLES_PATH=/home/username/Documents/code/picoaudio/pico-examples
+  export PICOTOOL_FETCH_FROM_GIT_PATH=/home/username/Documents/code/picotool
+  export PICO_PLATFORM=rp2350-arm-s
+  export PICO_BOARD=pico2
+  export PICO_TOOLCHAIN_PATH=/usr/bin
+  #export PICO_COMPILER=arm-none-eabi-gcc
+  unset PICO_COMPILER
+```
 
 * Fix code for non Wifi model and Pico 1
 * pictures, screenshots

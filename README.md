@@ -7,8 +7,7 @@ Tested on Raspberry Pi Pico 2 W (RP2350, Wifi)
 
 By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
 
-The Raspberry Pico 2  
-
+The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose whcih one to target with compiler settings.
 
 ## Hardware
 * USB data cable (USB power cable is not enough)

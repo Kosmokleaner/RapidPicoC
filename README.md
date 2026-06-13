@@ -22,6 +22,7 @@ The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to targ
 * USB data cable (USB power cable is not enough)
 * Raspberry Pi Pico 2 W (RP2350, Wifi)
 * Tested on Ubuntu x64, should be easy to adapt to other OS
+* Text editor or IDE e.g. VSCode, Notepad++ (yes, that is an option on Ubuntu)
 
 # How to the code locally
 

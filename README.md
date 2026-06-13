@@ -49,6 +49,10 @@ in.
 
 ## Todo
 > export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
+>
+>  picture
+
+## References
 
 * prebuilt picotool (missing USB support)
   https://github.com/raspberrypi/picotool

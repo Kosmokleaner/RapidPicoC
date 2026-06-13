@@ -1,7 +1,8 @@
 
 # Rapid Pico C
 
-Raspberry Pi Pico 2 C starter project optimized for iteration time (no USB plugin and button pressing).
+This is a Raspberry Pi Pico 2 C starter project, optimized for iteration time (no USB plugin and button pressing).
+This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file).
 
 Key lines for best iteration:
 ```

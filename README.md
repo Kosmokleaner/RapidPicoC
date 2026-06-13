@@ -1,22 +1,15 @@
 
 # Rapid Pico C
 
-Raspberry Pi Pico C starter project optimized for iteration time (no USB plugin and button pressing).
-
-* By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh
-  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
-
+Raspberry Pi Pico 2 C starter project optimized for iteration time (no USB plugin and button pressing, ).
 The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
 
-* Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
-  > Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
-
- rp2350-arm-s → ARM Cortex-M33 (Secure)<br>
- rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
- rp2350-riscv → Hazard3 RISC-V core
-
-* To change this, look for the following line in CMakeList.txt, run ./clean.sh
-  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+Key lines for best iteration:
+```
+  ./build.sh
+  sudo picotool load -x build/picow_blink.elf
+  putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+```
 
 ## Hardware and Software requirements
 * USB data cable (USB power cable is not enough)
@@ -118,6 +111,21 @@ in.
   > pico_enable_stdio_usb(picow_blink 1)
   > pico_enable_stdio_uart(picow_blink 0)
 
+## How to adapt for Pico 1 or Pico 2 (no W) or choose a different CPU architecture
+
+* By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh
+  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+
+* Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
+  > Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
+
+ rp2350-arm-s → ARM Cortex-M33 (Secure)<br>
+ rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
+ rp2350-riscv → Hazard3 RISC-V core
+
+* To change this, look for the following line in CMakeList.txt, run ./clean.sh
+  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+
 ## Todo
 * setup
   > source martin.sh
@@ -132,8 +140,9 @@ in.
   > #export PICO_COMPILER=arm-none-eabi-gcc
   > unset PICO_COMPILER
 
-* Fix for non Wifi model and Pico 1
+* Fix code for non Wifi model and Pico 1
 * pictures, screenshots
+* make putty line part of .sh 
 
 ## References
 * prebuilt picotool (missing USB support)

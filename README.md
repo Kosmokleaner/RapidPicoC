@@ -8,14 +8,13 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 
 
 ## Hardware
-
 * USB data cable (USB power cable is not enough)
 * Tested on Ubuntu x64, should be easy to adapt to other OS
 
 ## Build
 
 * compile and link
-  * > build.sh
+  > build.sh
 * for profiling
   > time ./build.sh
  
@@ -33,13 +32,13 @@ We need the picotool and I found prebuilt version but none had the USB support c
 in. 
 
 * If needed
-  * > sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
-  * > git clone https://github.com/raspberrypi/picotool.git
-  * > cd picotool
-  * > mkdir build
-  * > cd build
-  * > cmake -DCMAKE_BUILD_TYPE=Release ..
-  * > cmake --build . -j$(nproc)
+  > sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
+  > git clone https://github.com/raspberrypi/picotool.git
+  > cd picotool
+  > mkdir build
+  > cd build
+  > cmake -DCMAKE_BUILD_TYPE=Release ..
+  > cmake --build . -j$(nproc)
 
 
 
@@ -47,15 +46,14 @@ in.
 
 ## Keyboard input and text output 
 * If needed, install Putty SSH client
-* > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+  > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
 
 ## Todo
-> export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
->
->  picture
+* setup
+  > export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
+* pictures, screenshots
 
 ## References
-
 * prebuilt picotool (missing USB support)
   [1](https://github.com/raspberrypi/picotool)
   [2](https://github.com/raspberrypi/pico-sdk-tools/releases)

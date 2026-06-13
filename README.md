@@ -71,10 +71,6 @@ in.
   > cmake -DCMAKE_BUILD_TYPE=Release ..
   > cmake --build . -j$(nproc)
 
-* to find connection settings, likely: /dev/ttyS0 115200
-  > sudo dmesg | grep tty
-
-
 * upload
   > sudo picotool load -x build/picow_blink.elf
 
@@ -84,9 +80,16 @@ in.
 * If needed, install Putty SSH client
   > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
 
+* to find connection settings, likely: /dev/ttyS0 115200
+  > sudo dmesg | grep tty
+
+* Start Putty from terminal
+  > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+
 ## Todo
 * setup
   > export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
+* Fix for non Wifi model and Pico 1
 * pictures, screenshots
 
 ## References

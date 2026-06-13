@@ -78,9 +78,9 @@ Key lines for best iteration:
 
 We need "picotool" and I found prebuilt version but none of those had the required USB support compiled in. 
 
-* If needed / once (adjust the first line)
+* If needed / once
 ```
-  export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
+  export PICO_SDK_PATH=~/Documents/code/RapidPicoC/build/pico-sdk
   sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
   cd ~/Documents
   mkdir code

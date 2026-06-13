@@ -30,7 +30,8 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
      if (c == 27)
          reset_usb_boot(0, 0); // reboot
      cnt++;
-     printf("cnt:%d\n", cnt); // printout to see app running when connected to Putty 
+     // connect with PUTTY for output
+     printf("cnt:%d\n", cnt); 
   }
 ```
 

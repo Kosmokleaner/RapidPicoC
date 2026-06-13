@@ -20,15 +20,14 @@ Key lines for best iteration:
 
 # How to the code locally
 
-* Get the code from the terminal is one option (into Documents/code/RapidPicoC)
+* Get the code from the terminal is one option (into Documents/code/RapidPicoC), omit "> "
 ```
-  cd ~/Documents<>
-  mkdir code
-  cd code
-  git clone git@github.com:Kosmokleaner/RapidPicoC.git
-  cd RapidPicoC
-  chmod +x clean.sh
-  chmod +x build.sh
+  > cd ~/Documents<>
+  > mkdir code
+  > cd code
+  > cd RapidPicoC
+  > chmod +x clean.sh
+  > chmod +x build.sh
 ```
 
 ## C code explained
@@ -62,12 +61,13 @@ Key lines for best iteration:
 * compile and link
   > ./build.sh
 * for profiling
+```
   > time ./build.sh
   e.g. ...
   > real 0m0.612s
   > user 0m0.334s
   > sys	 0m0.281s
-
+```
  
 ## Method 1: Simple upload (physical)
 
@@ -83,6 +83,7 @@ We need the picotool and I found prebuilt version but none had the USB support c
 in. 
 
 * If needed / once
+```
   > sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
   > git clone https://github.com/raspberrypi/picotool.git
   > cd picotool
@@ -90,6 +91,7 @@ in.
   > cd build
   > cmake -DCMAKE_BUILD_TYPE=Release ..
   > cmake --build . -j$(nproc)
+```
 
 * upload
   > sudo picotool load -x build/picow_blink.elf

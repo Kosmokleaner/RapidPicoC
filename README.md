@@ -13,8 +13,8 @@ The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to targ
 * Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
   > Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
 
- rp2350-arm-s → ARM Cortex-M33 (Secure)
- rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)
+ rp2350-arm-s → ARM Cortex-M33 (Secure)<br>
+ rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
  rp2350-riscv → Hazard3 RISC-V core
 
 * to change this look for the following line in CMakeList.txt

@@ -26,13 +26,15 @@ The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to targ
 # How to the code locally
 
 * Get the code from the terminal is one option (into Documents/code/RapidPicoC)
-  > cd ~/Documents
-  > mkdir code
-  > cd code
-  > git clone git@github.com:Kosmokleaner/RapidPicoC.git
-  > cd RapidPicoC
-  > chmod +x clean.sh
-  > chmod +x build.sh
+```
+  cd ~/Documents<>
+  mkdir code
+  cd code
+  git clone git@github.com:Kosmokleaner/RapidPicoC.git
+  cd RapidPicoC
+  chmod +x clean.sh
+  chmod +x build.sh
+```
 
 ## C code explained
 

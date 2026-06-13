@@ -3,12 +3,10 @@
 
 Raspberry Pi Pico C starter project optimized for iteration time (no USB plugin and button pressing).
 
-Tested on Raspberry Pi Pico 2 W (RP2350, Wifi)
+* By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
+  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
 
-By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
-
-The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to target with compiler settings.
-
+The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
 
 * Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
   > Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
@@ -17,12 +15,12 @@ The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to targ
  rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
  rp2350-riscv → Hazard3 RISC-V core
 
-* to change this look for the following line in CMakeList.txt
-  > set(PICO_BOARD pico2_w CACHE STRING "Board type")
+* To change this, look for the following line in CMakeList.txt
+  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
 
-## Hardware and Software
+## Hardware and Software requirements
 * USB data cable (USB power cable is not enough)
-* Raspberry Pi Pico
+* Raspberry Pi Pico 2 W (RP2350, Wifi)
 * Tested on Ubuntu x64, should be easy to adapt to other OS
 
 # How to the code locally

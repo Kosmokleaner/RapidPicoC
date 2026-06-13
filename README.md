@@ -1,6 +1,8 @@
 
 # Rapid Pico C
 
+Raspberry Pi Pico C starter project optimized for iteration time (no USB plugin and button pressing).
+
 Tested on Raspberry Pi Pico 2 W (RP2350, Wifi)
 
 By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.

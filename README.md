@@ -1,8 +1,9 @@
 
 # Rapid Pico C
 
-This is a Raspberry Pi Pico 2 C starter project, optimized for iteration time (no USB plugin and button pressing).
+This is a Raspberry Pi Pico 2 C starter project (in/out ), optimized for iteration time (no USB plugin and button pressing).
 This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file).
+The setup work is still improvable. Feedback is welcome.
 
 Key lines for best iteration:
 ```
@@ -10,6 +11,9 @@ Key lines for best iteration:
   sudo picotool load -x build/picow_blink.elf
   putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
 ```
+
+<img width="507" height="132" alt="puttyText" src="https://github.com/user-attachments/assets/9582c295-363f-4874-8e2f-24e1f6ad407f" />
+
 
 ## Hardware and Software requirements
 * USB data cable (USB power cable is not enough)

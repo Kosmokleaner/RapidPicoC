@@ -57,10 +57,10 @@ The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to targ
 * todo PICO_SDK_PATH
 
 * compile and link
-  > build.sh
+  > ./build.sh
 * for profiling
   > time ./build.sh
-  e.g.
+  e.g. ...
   > real 0m0.612s
   > user 0m0.334s
   > sys	 0m0.281s

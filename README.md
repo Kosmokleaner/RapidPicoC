@@ -1,9 +1,9 @@
 
+# Rapid Pico C
 
 Tested on Raspberry Pi Pico 2 (RP2350)
 
-
-By adjusting the compielr setting this should work for Raspberry Pi Pico (RP2040) as well.
+By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
 
 
 (Raspberry Pi Documentation)[https://www.raspberrypi.com/documentation/microcontrollers/?version=5A09D5312E22]

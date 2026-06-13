@@ -59,7 +59,7 @@ Key lines for best iteration:
 
 * compile and link
 ```
-  > ./build.sh
+  ./build.sh
 ```
 * for profiling the build time
 ```
@@ -105,17 +105,25 @@ For more convenience you can make a symbolic link (export does not work with sud
 ```
 
 * upload (works only if in bootsel mode)
-  > sudo picotool load -x build/picow_blink.elf
+```
+  sudo picotool load -x build/picow_blink.elf
+```
 
 ## Keyboard input and text output 
 * If needed, install Putty SSH client
-  > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+```
+  putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+```
 
 * to find connection settings, likely: /dev/ttyS0 115200
-  > sudo dmesg | grep tty
+```
+  sudo dmesg | grep tty
+```
 
 * Start Putty from terminal
-  > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+```
+  putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+```
 
 * Or start Putty from terminal from Apps
 
@@ -123,24 +131,30 @@ For more convenience you can make a symbolic link (export does not work with sud
 
 * The app has USB stdin/stdout support because of the following lines in CMakeList.txt
 ```
-  > pico_enable_stdio_usb(picow_blink 1)
-  > pico_enable_stdio_uart(picow_blink 0)
+  pico_enable_stdio_usb(picow_blink 1)
+  pico_enable_stdio_uart(picow_blink 0)
 ```
 
 ## How to adapt for Pico 1 or Pico 2 (no W) or choose a different CPU architecture
 
 * By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh
-  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+```
+  set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+```
 
 * Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
-  > Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
+```
+  Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
+```
 
  rp2350-arm-s → ARM Cortex-M33 (Secure)<br>
  rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
  rp2350-riscv → Hazard3 RISC-V core
 
 * To change this, look for the following line in CMakeList.txt, run ./clean.sh
-  > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+```
+  set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+```
 
 ## Todo
 * Fix code for non Wifi model and Pico 1

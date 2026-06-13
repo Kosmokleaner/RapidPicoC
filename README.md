@@ -17,6 +17,11 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
   > build.sh
 * for profiling
   > time ./build.sh
+  e.g.
+  > real 0m0.612s
+  > user 0m0.334s
+  > sys	 0m0.281s
+
  
 ## Method 1: Simple upload (physical)
 
@@ -40,7 +45,8 @@ in.
   > cmake -DCMAKE_BUILD_TYPE=Release ..
   > cmake --build . -j$(nproc)
 
-
+* upload
+  > sudo picotool load -x build/picow_blink.elf
 
 
 

@@ -15,7 +15,7 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 
 ## C code explained
 
-* On board USB blinking
+* On board LED blinking, keyboard input and text output
 
 ```
   // init

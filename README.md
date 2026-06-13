@@ -1,7 +1,7 @@
 
 # Rapid Pico C
 
-Tested on Raspberry Pi Pico 2 (RP2350)
+Tested on Raspberry Pi Pico 2 W (RP2350, Wifi)
 
 By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
 
@@ -10,6 +10,19 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 ## Hardware
 * USB data cable (USB power cable is not enough)
 * Tested on Ubuntu x64, should be easy to adapt to other OS
+
+## C code explained
+
+* On board USB blinking
+  {
+   while (true)
+   {
+       cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+       sleep_ms(250);
+       cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
+       sleep_ms(250);
+    }
+  }
 
 ## Build
 

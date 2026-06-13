@@ -22,7 +22,7 @@ Key lines for best iteration:
 
 * Get the code from the terminal is one option (into Documents/code/RapidPicoC)
 ```
-  cd ~/Documents<>
+  cd ~/Documents
   mkdir code
   cd code
   git clone git@github.com:Kosmokleaner/RapidPicoC.git
@@ -66,21 +66,23 @@ Key lines for best iteration:
   time ./build.sh
 ```
  
-## Method 1: Simple upload (physical)
+## Method 1: Simple upload (physical, needed the first time): bootsel
 
 * If needed, unplug Raspberry Pi Pico from USB (Pico side is fragile connection, better to other side)
-* While pushing button on Pico, plug in USB data cable
+* While pushing button on Pico, plug in USB data cable (to put the device into bootsel mode)
 * A new device should appear in "Files", if not, the cable might not be a "data" cable 
 * Find the output file in build/<name>.uf2
 * Drag and drop the file to the device
 
-## Method 2: Better itertion time for upload: Pictool upload
+## Method 2: Better itertion time for upload: using picotool
 
-We need "picotool" and I found prebuilt version but none of those had the required USB support compiled in. 
+We need "picotool" and I found prebuilt versions but none had the required USB support compiled in. 
 
 * If needed / once
 ```
-  export PICO_SDK_PATH=~/Documents/code/RapidPicoC/build/pico-sdk
+  cd ~/Documents/code
+  git clone --recursive https://github.com/raspberrypi/pico-sdk.git
+  export PICO_SDK_PATH=~/Documents/code/pico-sdk
   sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
   cd ~/Documents
   mkdir code
@@ -93,7 +95,16 @@ We need "picotool" and I found prebuilt version but none of those had the requir
   cmake --build . -j$(nproc)
 ```
 
-* upload
+You should be able to run the picotool from the build folder. You can reference it like this: 
+```
+  ~/Documents/code/picotool/build/picotool
+```
+For more convenience you can make a symbolic link (export does not work with sudo and path adds unwanted files)
+```
+  sudo ln -s ~/Documents/code/picotool/build/picotool /usr/local/bin/picotool
+```
+
+* upload (works only if in bootsel mode)
   > sudo picotool load -x build/picow_blink.elf
 
 ## Keyboard input and text output 
@@ -132,21 +143,6 @@ We need "picotool" and I found prebuilt version but none of those had the requir
   > set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
 
 ## Todo
-* setup
-```
-  source martin.sh
-  
-  export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
-  export PICO_EXTRAS_PATH=/home/username/Documents/code/picoaudio/pico-extras
-  export PICO_EXAMPLES_PATH=/home/username/Documents/code/picoaudio/pico-examples
-  export PICOTOOL_FETCH_FROM_GIT_PATH=/home/username/Documents/code/picotool
-  export PICO_PLATFORM=rp2350-arm-s
-  export PICO_BOARD=pico2
-  export PICO_TOOLCHAIN_PATH=/usr/bin
-  #export PICO_COMPILER=arm-none-eabi-gcc
-  unset PICO_COMPILER
-```
-
 * Fix code for non Wifi model and Pico 1
 * pictures, screenshots
 * make putty line part of .sh 

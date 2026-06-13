@@ -7,6 +7,7 @@ Tested on Raspberry Pi Pico 2 W (RP2350, Wifi)
 
 By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
 
+The Raspberry Pico 2  
 
 
 ## Hardware
@@ -85,6 +86,9 @@ in.
 
 * Start Putty from terminal
   > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
+
+* Or start Putty from terminal from Apps
+  <img width="677" height="641" alt="puttyUI" src="https://github.com/user-attachments/assets/9cbec431-613a-4d05-984e-0c1817832297" />
 
 ## Todo
 * setup

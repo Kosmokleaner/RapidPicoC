@@ -6,8 +6,6 @@ Tested on Raspberry Pi Pico 2 (RP2350)
 By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
 
 
-(Raspberry Pi Documentation)[https://www.raspberrypi.com/documentation/microcontrollers/?version=5A09D5312E22]
-
 
 ## Hardware
 
@@ -57,7 +55,7 @@ in.
 * prebuilt picotool (missing USB support)
   https://github.com/raspberrypi/picotool
   https://github.com/raspberrypi/pico-sdk-tools/releases
-  
+* (Raspberry Pi Documentation)[https://www.raspberrypi.com/documentation/microcontrollers/?version=5A09D5312E22]
 
 
 

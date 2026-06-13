@@ -10,10 +10,11 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 ## Hardware
 
 * USB data cable (USB power cable is not enough)
-* Tested on Ubuntu x64
-* 
+* Tested on Ubuntu x64, should be easy to adapt to other OS
 
 ## Build
+
+* > build.sh
 
 ## Method 1: Simple upload (physical)
 

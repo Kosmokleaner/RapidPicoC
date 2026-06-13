@@ -144,6 +144,8 @@ For more convenience you can make a symbolic link (export does not work with sud
 
 ## How to adapt for Pico 1 or Pico 2 (no W) or choose a different CPU architecture
 
+! untested !
+
 The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
 
 * By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh

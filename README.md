@@ -7,7 +7,10 @@ Tested on Raspberry Pi Pico 2 W (RP2350, Wifi)
 
 By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well.
 
-The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose whcih one to target with compiler settings.
+The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to target with compiler settings.
+
+* look for the following line in CMakeList.txt
+  > set(PICO_BOARD pico2_w CACHE STRING "Board type")
 
 ## Hardware
 * USB data cable (USB power cable is not enough)
@@ -38,6 +41,8 @@ The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose whcih one to targ
 ```
 
 ## Build
+
+* todo PICO_SDK_PATH
 
 * compile and link
   > build.sh
@@ -74,8 +79,6 @@ in.
 * upload
   > sudo picotool load -x build/picow_blink.elf
 
-
-
 ## Keyboard input and text output 
 * If needed, install Putty SSH client
   > putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
@@ -90,9 +93,24 @@ in.
 
 <img width="341" height="319" alt="puttyUI" src="https://github.com/user-attachments/assets/e4fef307-3f3c-405b-a085-f6a6e60625ed" />
 
+* The app has USB stdin/stdout support because of the following lines in CMakeList.txt
+  > pico_enable_stdio_usb(picow_blink 1)
+  > pico_enable_stdio_uart(picow_blink 0)
+
 ## Todo
 * setup
+  > source martin.sh
+  > 
   > export PICO_SDK_PATH=/home/username/Documents/code/picoaudio/pico-sdk
+  > export PICO_EXTRAS_PATH=/home/username/Documents/code/picoaudio/pico-extras
+  > export PICO_EXAMPLES_PATH=/home/username/Documents/code/picoaudio/pico-examples
+  > export PICOTOOL_FETCH_FROM_GIT_PATH=/home/username/Documents/code/picotool
+  > export PICO_PLATFORM=rp2350-arm-s
+  > export PICO_BOARD=pico2
+  > export PICO_TOOLCHAIN_PATH=/usr/bin
+  > #export PICO_COMPILER=arm-none-eabi-gcc
+  > unset PICO_COMPILER
+
 * Fix for non Wifi model and Pico 1
 * pictures, screenshots
 

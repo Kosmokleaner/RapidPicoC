@@ -16,12 +16,21 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 * On board USB blinking
 
 ```
- while (true)
- {
+  // init
+  stdio_init_all();
+  if (cyw43_arch_init()) { printf("Wi-Fi init failed"); return -1; }
+  while (true)
+  {
      cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
      sleep_ms(250);
      cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
      sleep_ms(250);
+   		// connect with PUTTY for keyboard input
+     int c = getchar_timeout_us(0);
+     if (c == 27)
+         reset_usb_boot(0, 0); // reboot
+     cnt++;
+     printf("cnt:%d\n", cnt); // printout to see app running when connected to Putty 
   }
 ```
 
@@ -50,7 +59,7 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 We need the picotool and I found prebuilt version but none had the USB support compiled
 in. 
 
-* If needed
+* If needed / once
   > sudo apt install build-essential cmake pkg-config libusb-1.0-0-dev
   > git clone https://github.com/raspberrypi/picotool.git
   > cd picotool
@@ -58,6 +67,10 @@ in.
   > cd build
   > cmake -DCMAKE_BUILD_TYPE=Release ..
   > cmake --build . -j$(nproc)
+
+* to find connection settings, likely: /dev/ttyS0 115200
+  > sudo dmesg | grep tty
+
 
 * upload
   > sudo picotool load -x build/picow_blink.elf

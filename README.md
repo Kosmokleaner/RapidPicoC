@@ -89,7 +89,7 @@ in.
 
 * Or start Putty from terminal from Apps
 
-  <img width="338" height="320" alt="puttyUI" src="https://github.com/user-attachments/assets/9cbec431-613a-4d05-984e-0c1817832297" />
+<img width="341" height="319" alt="puttyUI" src="https://github.com/user-attachments/assets/e4fef307-3f3c-405b-a085-f6a6e60625ed" />
 
 ## Todo
 * setup

@@ -15,7 +15,8 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
 ## Build
 
 * > build.sh
-
+* for profiling > time ./build.sh
+ 
 ## Method 1: Simple upload (physical)
 
 * If needed, unplug Raspberry Pi Pico from USB (Pico side is fragile connection, better to other side)

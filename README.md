@@ -172,12 +172,6 @@ The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to targ
 * pictures, screenshots
 * make putty line part of .sh 
 
-## References
-* prebuilt picotool (missing USB support)
-  [1](https://github.com/raspberrypi/picotool)
-  [2](https://github.com/raspberrypi/pico-sdk-tools/releases)
-* [Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/microcontrollers/?version=5A09D5312E22)
-
 
 
 

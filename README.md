@@ -12,9 +12,19 @@ The Raspberry Pico 2 has a AMD and a RiscV CPU, you can choose which one to targ
 * look for the following line in CMakeList.txt
   > set(PICO_BOARD pico2_w CACHE STRING "Board type")
 
-## Hardware
+## Hardware and Software
 * USB data cable (USB power cable is not enough)
+* Raspberry Pi Pico
 * Tested on Ubuntu x64, should be easy to adapt to other OS
+
+# How to the code locally
+
+* Get the code from the terminal is one option (into Documents/code/RapidPicoC)
+  > cd ~/Documents
+  > mkdir code
+  > cd code
+  > git clone git@github.com:Kosmokleaner/RapidPicoC.git
+  > cd RapidPicoC
 
 ## C code explained
 

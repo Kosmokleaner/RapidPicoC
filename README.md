@@ -3,8 +3,6 @@
 
 Raspberry Pi Pico 2 C starter project optimized for iteration time (no USB plugin and button pressing).
 
-The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
-
 Key lines for best iteration:
 ```
   ./build.sh
@@ -108,6 +106,10 @@ For more convenience you can make a symbolic link (export does not work with sud
 ```
   sudo picotool load -x build/picow_blink.elf
 ```
+  To quickly get back into bootself mode use Putty and press ESC, see C code:
+```
+  reset_usb_boot(0, 0);
+```
 
 ## Keyboard input and text output 
 * If needed, install Putty SSH client
@@ -136,6 +138,8 @@ For more convenience you can make a symbolic link (export does not work with sud
 ```
 
 ## How to adapt for Pico 1 or Pico 2 (no W) or choose a different CPU architecture
+
+The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
 
 * By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh
 ```

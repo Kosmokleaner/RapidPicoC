@@ -56,10 +56,10 @@ Key lines for best iteration:
 
 ## Build
 
-* todo PICO_SDK_PATH
-
 * compile and link
+```
   > ./build.sh
+```
 * for profiling
 ```
   > time ./build.sh
@@ -79,8 +79,7 @@ Key lines for best iteration:
 
 ## Method 2: Better itertion time for upload: Pictool upload
 
-We need the picotool and I found prebuilt version but none had the USB support compiled
-in. 
+We need "picotool" and I found prebuilt version but none of those had the required USB support compiled in. 
 
 * If needed / once
 ```

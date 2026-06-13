@@ -12,8 +12,9 @@ Key lines for best iteration:
   putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
 ```
 
-<img width="507" height="132" alt="puttyText" src="https://github.com/user-attachments/assets/9582c295-363f-4874-8e2f-24e1f6ad407f" />
+You can use the host PC keyboard and see the output in a window:
 
+<img width="507" height="132" alt="puttyText" src="https://github.com/user-attachments/assets/9582c295-363f-4874-8e2f-24e1f6ad407f" />
 
 ## Hardware and Software requirements
 * USB data cable (USB power cable is not enough)

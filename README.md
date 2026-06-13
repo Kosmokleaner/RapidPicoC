@@ -1,7 +1,8 @@
 
 # Rapid Pico C
 
-Raspberry Pi Pico 2 C starter project optimized for iteration time (no USB plugin and button pressing, ).
+Raspberry Pi Pico 2 C starter project optimized for iteration time (no USB plugin and button pressing).
+
 The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
 
 Key lines for best iteration:

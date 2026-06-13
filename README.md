@@ -20,12 +20,10 @@ By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040
   stdio_init_all();
   if (cyw43_arch_init()) { printf("Wi-Fi init failed"); return -1; }
 
-  int flip = 0;
   while (true)
   {
      // wifi LED, change for non W model
-     cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, flip);
-     flip = 1 - flip;
+     cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, cnt % 2);
      sleep_ms(250);
    		// connect with PUTTY for keyboard input
      int c = getchar_timeout_us(0);

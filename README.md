@@ -4,7 +4,7 @@
 <img width="315" height="106" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
 
 
-This is a **Raspberry Pi Pico 2** C/C++ starter project (in/out) for **ARM** or **RISC-V**, optimized for iteration time and convenience (no USB plugin and button pressing).
+This is a "Raspberry Pi Pico 2" C/C++ starter project (in/out) for **ARM** or **RISC-V**, optimized for iteration time and convenience (no USB plugin and button pressing).
 This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file). The setup work is still improvable, feedback is welcome.
 
 Key lines for best iteration (1 sec build, ~4sec for upload):

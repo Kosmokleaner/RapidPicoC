@@ -1,5 +1,5 @@
 
-# Rapid Pico C
+# Rapid Pico C   V0.9
 
 <img width="315" height="106" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
 

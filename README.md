@@ -25,7 +25,7 @@ or better use alias (todo: put in a new setup.sh)
   p
 ```
 
-You can use the host PC keyboard and see the output in a window:
+You can use the host PC keyboard and see the output in a window (latest code logs CPU):
 
 <img width="507" height="132" alt="puttyText" src="https://github.com/user-attachments/assets/9582c295-363f-4874-8e2f-24e1f6ad407f" />
 

@@ -24,6 +24,10 @@ You can use the host PC keyboard and see the output in a window:
 The ~7$ hardware features a ARM(2-core) and RISC-V(2-core) at 150 MHz, 520KB SRAM and 4MB Flash memory. It's tiny and low power which means you can use USB or a battery and no need for a fan. You can get the Wifi + Bluetooth variant. You start programming with Python and play with cheap attachable custom hardware (displays, sound in/out, buttons, motors, sensors). If you need more performance you can program in C/C++ or assembly. No OS (it's a Micro controller, no Micro processor) or other services make the performance very stable. Simple coprocessors can be used for custom tasks e.g. output 15bit color to a VG display. The older Pico 1 specs are a bit lower but suitable for most use cases.
 
 ## Hardware and Software requirements
+
+<img width="364" height="233" alt="IMG_9676" src="https://github.com/user-attachments/assets/24508288-692b-4556-8fdb-56a19b8ef924" />
+
+
 * USB data cable (USB power cable is not enough)
 * Raspberry Pi Pico 2 W (RP2350, Wifi)
 * Tested on Ubuntu x64, should be easy to adapt to other OS

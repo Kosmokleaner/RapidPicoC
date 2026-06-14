@@ -15,7 +15,7 @@ Key lines for best iteration (1 sec build, ~4sec for upload):
 ```
 or better use alias (todo: put in a new setup.sh)
 ```
-alias b="./build"
+alias b="./build.sh"
 alias u="sudo picotool load -x build/picow_blink.elf"
 alias p="putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N"
 ```

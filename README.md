@@ -5,8 +5,7 @@
 
 
 This is a "Raspberry Pi Pico 2" C/C++ starter project (in/out ), optimized for iteration time (no USB plugin and button pressing).
-This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file).
-The setup work is still improvable. Feedback is welcome.
+This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file) - for convience and speed. The setup work is still improvable. Feedback is welcome.
 
 Key lines for best iteration:
 ```

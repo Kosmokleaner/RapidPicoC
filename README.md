@@ -153,16 +153,9 @@ For more convenience you can make a symbolic link (export does not work with sud
   pico_enable_stdio_uart(picow_blink 0)
 ```
 
-## How to adapt for Pico 1 or Pico 2 (no W) or choose a different CPU architecture
-
-! untested !
+## How to adapt for RISC-V
 
 The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
-
-* By adjusting the compiler setting this should work for Raspberry Pi Pico (RP2040) as well, run ./clean.sh
-```
-  set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
-```
 
 * Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
 ```
@@ -173,10 +166,28 @@ The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to targ
  rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
  rp2350-riscv → Hazard3 RISC-V core
 
-* To change this, look for the following line in CMakeList.txt, run ./clean.sh
+* Install the RISV-V compiler once
 ```
-  set(PICO_PLATFORM rp2350-riscv CACHE STRING "Platform")
+  kdir -p ~/.pico-sdk/riscv
+  cd ~/.pico-sdk/riscv
+  wget https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.0.0-5/riscv-  toolchain-14-x86_64-lin.tar.gz
+  tar xf riscv-toolchain-14-x86_64-lin.tar.gz
 ```
+* run ./clear.sh
+* Change the CMakeList.txt, uncomment those lines
+```
+set(PICO_TOOLCHAIN_PATH ~/.pico-sdk/riscv)
+set(PICO_PLATFORM rp2350-riscv)
+```
+
+## How to adapt for Pico 1 or Pico 2 or no Wifi
+! untested !
+
+Adjust the following line (_w is for Wifi)
+```
+set(PICO_BOARD pico2_w CACHE STRING "Board type")
+```
+
 
 ## Todo
 * First printf don't reach PuTTY, fix without adding delay

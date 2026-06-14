@@ -15,9 +15,14 @@ Key lines for best iteration (1 sec build, ~4sec for upload):
 ```
 or better use alias (todo: put in a new setup.sh)
 ```
-alias b="./build.sh"
-alias u="sudo picotool load -x build/picow_blink.elf"
-alias p="putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N"
+  alias b="./build.sh"
+  alias u="sudo picotool load -x build/picow_blink.elf"
+  alias p="putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N"
+```
+```
+  b
+  u
+  p
 ```
 
 You can use the host PC keyboard and see the output in a window:

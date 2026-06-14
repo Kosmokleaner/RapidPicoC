@@ -179,9 +179,13 @@ The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to targ
 ```
 
 ## Todo
+* First printf don't reach PuTTY, fix without adding delay
+* RISC-V compile mode
+* Measure and optimize for time
+* sudo needs password, how not need this?
 * Fix code for non Wifi model and Pico 1
-* pictures, screenshots
-* make putty line part of .sh 
+* Pictures, screenshots
+* Make putty line part of .sh 
 
 
 

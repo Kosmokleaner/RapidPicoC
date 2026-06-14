@@ -1,7 +1,7 @@
 
 # Rapid Pico C
 
-<img width="629" height="213" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
+<img width="315" height="106" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
 
 
 This is a "Raspberry Pi Pico 2" C/C++ starter project (in/out ), optimized for iteration time (no USB plugin and button pressing).

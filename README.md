@@ -70,12 +70,12 @@ The ~7$ hardware features a (2-core) and RISC-V(2-core) at 150 MHz, 520KB SRAM a
      // wifi LED, change for non W model
      cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, cnt % 2);
      sleep_ms(250);
-   		// connect with PUTTY for keyboard input
+     // connect with PuTTY for keyboard input
      int c = getchar_timeout_us(0);
      if (c == 27)
          reset_usb_boot(0, 0); // reboot
      cnt++;
-     // connect with PUTTY for output
+     // connect with PuTTY for output
      printf("cnt:%d\n", cnt); 
   }
 ```

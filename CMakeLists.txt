@@ -2,6 +2,11 @@
 
 cmake_minimum_required(VERSION 3.13)
 
+# "ARM" or "RISCV"
+set(MY_CPU_TARGET "ARM")
+
+####################################################################
+
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -31,8 +36,11 @@ set(PICO_BOARD pico2_w CACHE STRING "Board type")
 # cd ~/.pico-sdk/riscv
 # wget https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.0.0-5/riscv-toolchain-14-x86_64-lin.tar.gz
 # tar xf riscv-toolchain-14-x86_64-lin.tar.gz
-#set(PICO_TOOLCHAIN_PATH ~/.pico-sdk/riscv)
-#set(PICO_PLATFORM rp2350-riscv)
+if(MY_CPU_TARGET STREQUAL "RISCV")
+set(PICO_TOOLCHAIN_PATH ~/.pico-sdk/riscv)
+set(PICO_PLATFORM rp2350-riscv)
+endif()
+
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)

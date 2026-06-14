@@ -1,6 +1,9 @@
 
 # Rapid Pico C
 
+<img width="629" height="213" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
+
+
 This is a "Raspberry Pi Pico 2" C/C++ starter project (in/out ), optimized for iteration time (no USB plugin and button pressing).
 This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file).
 The setup work is still improvable. Feedback is welcome.

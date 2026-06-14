@@ -166,18 +166,18 @@ For more convenience you can make a symbolic link (export does not work with sud
 
 ## How to adapt for RISC-V
 
-The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
+The Raspberry Pico 2 has a ARM and a RISC-V CPU, you can choose which one to target with compiler settings.
 
-My default the code compiles for "ARM Cortex-M33 core" as can be seen in the compile log: 
+This line in the compiler log shows the target CPU architecture:
 ```
   Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
 ```
 
- rp2350-arm-s → ARM Cortex-M33 (Secure)<br>
- rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
- rp2350-riscv → Hazard3 RISC-V core<br>
-<br>
- You can change this to compile for RISK-V.
+You can change it in CMakeLists.txt:
+```
+# "ARM" or "RISCV"
+set(MY_CPU_TARGET "ARM")
+```
 
 * Install the RISV-V compiler once
 ```

@@ -19,9 +19,9 @@ You can use the host PC keyboard and see the output in a window:
 
 <img width="507" height="132" alt="puttyText" src="https://github.com/user-attachments/assets/9582c295-363f-4874-8e2f-24e1f6ad407f" />
 
-## Why Raspberry Pi Pico 2
+## Why Raspberry Pi Pico 2 W
 
-The ~7$ hardware features a ARM(2-core) and RISC-V(2-core) at 150 MHz, 520KB SRAM and 4MB Flash memory. It's tiny and low power which means you can use USB or a battery and no need for a fan. You can get the Wifi + Bluetooth variant. You start programming with Python and play with cheap attachable custom hardware (displays, sound in/out, buttons, motors, sensors). If you need more performance you can program in C/C++ or assembly. No OS (it's a Micro controller, no Micro processor) or other services make the performance very stable. Simple coprocessors can be used for custom tasks e.g. output 15bit color to a VG display. The older Pico 1 specs are a bit lower but suitable for most use cases.
+The ~7$ hardware features a ARM(2-core) and RISC-V(2-core) at 150 MHz, 520KB SRAM and 4MB Flash memory. It's tiny and low power which means you can use USB or a battery and no need for a fan. You can get the Wifi + Bluetooth variant (W) which I did but mind the code to address the LED needs minor adjustment. You start programming with Python and play with cheap attachable custom hardware (displays, sound in/out, buttons, motors, sensors). If you need more performance you can program in C/C++ or assembly. No OS (it's a Micro controller, no Micro processor) or other services make the performance very stable. Simple coprocessors can be used for custom tasks e.g. output 15bit color to a VG display. The older Pico 1 specs are a bit lower but suitable for most use cases.
 
 ## Hardware and Software requirements
 

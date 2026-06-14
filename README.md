@@ -1,5 +1,5 @@
 
-# Rapid Pico C   V0.9
+# Rapid Pico C   V0.95
 
 <img width="315" height="106" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
 
@@ -10,13 +10,13 @@ This is much better than the standard method (unplug cable, plug in cable while 
 Key lines for best iteration (1 sec build, ~4sec for upload):
 ```
   ./build.sh
-  sudo picotool load -x build/picow_blink.elf
+  picotool load -x build/picow_blink.elf
   putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N
 ```
 or better use alias (todo: put in a new setup.sh)
 ```
   alias b="./build.sh"
-  alias u="sudo picotool load -x build/picow_blink.elf"
+  alias u="picotool load -x build/picow_blink.elf"
   alias p="putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N"
 ```
 ```
@@ -118,20 +118,25 @@ We need "picotool" and I found prebuilt versions but none had the required USB s
   cd build
   cmake -DCMAKE_BUILD_TYPE=Release ..
   cmake --build . -j$(nproc)
+  # to not have to use sudo and require password
+  cd ../udev
+  sudo cp 60-picotool.rules /etc/udev/rules.d/ 
+  sudo udevadm control --reload
 ```
 
 You should be able to run the picotool from the build folder. You can reference it like this: 
 ```
   ~/Documents/code/picotool/build/picotool
 ```
+
 For more convenience you can make a symbolic link (export does not work with sudo and path adds unwanted files)
 ```
   sudo ln -s ~/Documents/code/picotool/build/picotool /usr/local/bin/picotool
 ```
 
-* upload (works only if in bootsel mode)
+* upload (works only if in bootsel mode, needs sudo or 60-picotool.rules applied)
 ```
-  sudo picotool load -x build/picow_blink.elf
+  picotool load -x build/picow_blink.elf
 ```
   To quickly get back into bootself mode use Putty and press ESC, see C code:
 ```
@@ -201,12 +206,19 @@ Adjust the following line (_w is for Wifi)
 set(PICO_BOARD pico2_w CACHE STRING "Board type")
 ```
 
+## Versions
+* 6/13/2026 initial release
+* 6/14/2026 V0.9 added MY_CPU_TARGET 
+* 6/14/2026 V0.95 removed need for sudo on upload
+
 ## Todo
 * First printf don't reach PuTTY, fix without adding delay
-* sudo needs password, how to not need this?
 * Fix code for non Wifi model and Pico 1
 * Pictures, screenshots
-* Make putty line part of .sh 
+* Make putty line part of .sh
+* put alis into .sh (use source ./build.sh)
+* add assembly example
+* better keyboard handling, console?
 
 
 

@@ -4,10 +4,10 @@
 <img width="315" height="106" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
 
 
-This is a "Raspberry Pi Pico 2" C/C++ starter project (in/out ), optimized for iteration time (no USB plugin and button pressing).
-This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file) - for convience and speed. The setup work is still improvable. Feedback is welcome.
+This is a "Raspberry Pi Pico 2" C/C++ starter project (in/out) for ARM or RISC-V, optimized for iteration time and convenience (no USB plugin and button pressing).
+This is much better than the standard method (unplug cable, plug in cable while pressing button, drag and drop .uf2 file). The setup work is still improvable, feedback is welcome.
 
-Key lines for best iteration:
+Key lines for best iteration (1 sec build, ~4sec for upload):
 ```
   ./build.sh
   sudo picotool load -x build/picow_blink.elf
@@ -20,7 +20,7 @@ You can use the host PC keyboard and see the output in a window:
 
 ## Why Raspberry Pi Pico 2 W
 
-The ~7$ hardware features a ARM(2-core) and RISC-V(2-core) at 150 MHz, 520KB SRAM and 4MB Flash memory. It's tiny and low power which means you can use USB or a battery and no need for a fan. You can get the Wifi + Bluetooth variant (W) which I did but mind the code to address the LED needs minor adjustment. You start programming with Python and play with cheap attachable custom hardware (displays, sound in/out, buttons, motors, sensors). If you need more performance you can program in C/C++ or assembly. No OS (it's a Micro controller, no Micro processor) or other services make the performance very stable. Simple coprocessors can be used for custom tasks e.g. output 15bit color to a VG display. The older Pico 1 specs are a bit lower but suitable for most use cases.
+The ~7$ hardware features a (2-core) and RISC-V(2-core) at 150 MHz, 520KB SRAM and 4MB Flash memory. It's tiny and low power which means you can use USB or a battery and no need for a fan. You can get the Wifi + Bluetooth variant (W) which I did but mind the code to address the LED needs minor adjustment. You start programming with Python and play with cheap attachable custom hardware (displays, sound in/out, buttons, motors, sensors). If you need more performance you can program in C/C++ or assembly. No OS (it's a Micro controller, no Micro processor) or other services make the performance very stable. Simple coprocessors can be used for custom tasks e.g. output 15bit color to a VG display. The older Pico 1 specs are a bit lower but suitable for most use cases.
 
 ## Hardware and Software requirements
 
@@ -157,14 +157,16 @@ For more convenience you can make a symbolic link (export does not work with sud
 
 The Raspberry Pico 2 has a ARM and a RiscV CPU, you can choose which one to target with compiler settings.
 
-* Currently the code is setup to compile for "ARM Cortex-M33 core" as can be seen in the compile log: 
+My default the code compiles for "ARM Cortex-M33 core" as can be seen in the compile log: 
 ```
   Pico Platform (PICO_PLATFORM) is 'rp2350-arm-s'.
 ```
 
  rp2350-arm-s → ARM Cortex-M33 (Secure)<br>
  rp2350-arm-ns → ARM Cortex-M33 (Non-Secure)<br>
- rp2350-riscv → Hazard3 RISC-V core
+ rp2350-riscv → Hazard3 RISC-V core<br>
+<br>
+ You can change this to compile for RISK-V.
 
 * Install the RISV-V compiler once
 ```
@@ -188,12 +190,9 @@ Adjust the following line (_w is for Wifi)
 set(PICO_BOARD pico2_w CACHE STRING "Board type")
 ```
 
-
 ## Todo
 * First printf don't reach PuTTY, fix without adding delay
-* RISC-V compile mode
-* Measure and optimize for time
-* sudo needs password, how not need this?
+* sudo needs password, how to not need this?
 * Fix code for non Wifi model and Pico 1
 * Pictures, screenshots
 * Make putty line part of .sh 

@@ -1,5 +1,6 @@
 echo "clean"
 # r:remove folder, f:force, print no error
+rm -rf build
 rm -rf CMakeFiles
 rm -rf generated
 rm -rf pico-sdk

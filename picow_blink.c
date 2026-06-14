@@ -19,8 +19,13 @@ int main()
 
     while (true)
     {
-		// toggle 0 / 1 state to blink LED on Pico 2 W
+		// toggle 0 / 1 state to blink LED
+#ifdef CYW43_WL_GPIO_LED_PIN
         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, cnt % 2);
+#else
+		gpio_put(PICO_DEFAULT_LED_PIN, cnt % 2);
+#endif
+
         sleep_ms(250);
 
 		// connect with PUTTY for keyboard input
@@ -29,8 +34,17 @@ int main()
         if (c == 27)
             reset_usb_boot(0, 0); // reboot
 
+		char* CPU = "?";
+#ifdef __ARM_ARCH_8M_MAIN__
+    // Cortex-M33 (RP2350 ARM core)
+	CPU = "ARM";
+#endif
+#ifdef __riscv
+	CPU = "RISC-V";
+#endif
+
         cnt++;
-        printf("cnt:%d\n", cnt);
+        printf("cnt:%d CPU:%s\n", cnt, CPU);
 		// connect with PUTTY for output
     }
 }

@@ -24,6 +24,15 @@ if (EXISTS ${picoVscode})
 endif()
 # ====================================================================================
 set(PICO_BOARD pico2_w CACHE STRING "Board type")
+#set(PICO_BOARD pico_w CACHE STRING "Board type")
+
+# uncomment to target RISC-V instead of ARM CPU. Install compiler before:
+# mkdir -p ~/.pico-sdk/riscv
+# cd ~/.pico-sdk/riscv
+# wget https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.0.0-5/riscv-toolchain-14-x86_64-lin.tar.gz
+# tar xf riscv-toolchain-14-x86_64-lin.tar.gz
+#set(PICO_TOOLCHAIN_PATH ~/.pico-sdk/riscv)
+#set(PICO_PLATFORM rp2350-riscv)
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)

@@ -1,50 +1,62 @@
-// see https://github.com/Kosmokleaner/RapidPicoC
+// RapicPicoC
+// https://github.com/Kosmokleaner/RapidPicoC
+// Version 1.0
 
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
 #include "pico/bootrom.h"
 
+#include "platform.h"
+
 int main()
 {
-    stdio_init_all();
-	// needed?
-    if (cyw43_arch_init())
-	{
-        printf("Wi-Fi init failed");
-        return -1;
-    }
-    int cnt = 0;
+    asm_init();
 
-    printf("ESC to reboot\n\n");
+    stdio_init_all();
+
+	// call is needed for Wifi model, return argument 
+    bool wifiInit = cyw43_arch_init();
+
+	// for non Wifi model
+#ifndef CYW43_WL_GPIO_LED_PIN
+    gpio_init(PICO_DEFAULT_LED_PIN);
+    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+#endif
+	
+    int cnt = 0;
 
     while (true)
     {
 		// toggle 0 / 1 state to blink LED
 #ifdef CYW43_WL_GPIO_LED_PIN
-        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, cnt % 2);
+		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, cnt % 2);
 #else
 		gpio_put(PICO_DEFAULT_LED_PIN, cnt % 2);
 #endif
 
         sleep_ms(250);
 
-		// connect with PUTTY for keyboard input
+        static bool stdinConnected = false;
+        if(!stdinConnected && stdio_usb_connected())
+        {
+            stdinConnected = true;
+
+            printf("Press ESC to reboot (into BOOTSEL mode)\n\n");
+            printf("  CPU:'%s'\n", getCompiledInstructionSet());
+            printf("  wifiInit:'%d'\n", (int)wifiInit);
+            // 4 on Raspberry Pi Pico
+            printf("  sizeof(void*):%d\n", sizeof(void*));
+        }
+
+        // connect with PUTTY for keyboard input and printf output
+
         int c = getchar_timeout_us(0);
-		// press ESC to reboot
+
+        // press ESC to reboot
         if (c == 27)
             reset_usb_boot(0, 0); // reboot
-
-		char* CPU = "?";
-#ifdef __ARM_ARCH_8M_MAIN__
-    // Cortex-M33 (RP2350 ARM core)
-	CPU = "ARM";
-#endif
-#ifdef __riscv
-	CPU = "RISC-V";
-#endif
-
+	
         cnt++;
-        printf("cnt:%d CPU:%s\n", cnt, CPU);
-		// connect with PUTTY for output
+        printf("cnt:%d cycles:%u\n", cnt, get_cycles());
     }
 }

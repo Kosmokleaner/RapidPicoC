@@ -37,8 +37,8 @@ set(PICO_BOARD pico2_w CACHE STRING "Board type")
 # wget https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.0.0-5/riscv-toolchain-14-x86_64-lin.tar.gz
 # tar xf riscv-toolchain-14-x86_64-lin.tar.gz
 if(MY_CPU_TARGET STREQUAL "RISCV")
-set(PICO_TOOLCHAIN_PATH ~/.pico-sdk/riscv)
-set(PICO_PLATFORM rp2350-riscv)
+    set(PICO_TOOLCHAIN_PATH ~/.pico-sdk/riscv)
+    set(PICO_PLATFORM rp2350-riscv)
 endif()
 
 
@@ -54,11 +54,22 @@ pico_sdk_init()
 
 add_executable(picow_blink
         picow_blink.c
+        platform_arm.c
+        platform_riscv.c
+        platform.c
         )
 target_link_libraries(picow_blink
         pico_stdlib              # for core functionality
         pico_cyw43_arch_none     # we need Wifi to access the GPIO, but we don't need anything else
         )
+
+# missing return
+if(MSVC)
+    target_compile_options(picow_blink PRIVATE /we4716)
+else()
+    # For GCC and Clang: enable the warning and turn it into a compilation error
+    target_compile_options(picow_blink PRIVATE -Wreturn-type -Werror=return-type)
+endif()
 
 # allow USB connection to PUTTY (printf and getchar inpuut)
 pico_enable_stdio_usb(picow_blink 1)

@@ -15,5 +15,11 @@ make
 # output is build/<name>.uf2
 # copy to the Raspberry Pi Pico
 
+# copy the following lines for more convenient single letter iteration
+# or run the build script once with "source ./build"
+alias b="./build.sh"
+alias u="picotool load -x build/picow_blink.elf"
+alias p="putty -serial /dev/ttyACM0 -sercfg 115200,8,n,1,N"
+
 
 

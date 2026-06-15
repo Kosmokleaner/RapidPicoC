@@ -1,5 +1,5 @@
 
-# Rapid Pico C   V0.95
+# Rapid Pico C   V1.0
 
 <img width="315" height="106" alt="ezgif-71ae7d307d8e3e63" src="https://github.com/user-attachments/assets/84b03f22-d1a9-49c9-b2e1-816c5d42931b" />
 
@@ -210,9 +210,9 @@ set(PICO_BOARD pico2_w CACHE STRING "Board type")
 * 6/13/2026 initial release
 * 6/14/2026 V0.9 added MY_CPU_TARGET 
 * 6/14/2026 V0.95 removed need for sudo on upload
+* 6/14/2026 V1.0 delay first printf to be after PuTTY is connected, added RISC-V and ARM inline assembly 
 
 ## Todo
-* First printf don't reach PuTTY, fix without adding delay
 * Fix code for non Wifi model and Pico 1
 * Pictures, screenshots
 * Make putty line part of .sh

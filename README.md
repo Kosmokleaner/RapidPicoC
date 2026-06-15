@@ -213,10 +213,8 @@ set(PICO_BOARD pico2_w CACHE STRING "Board type")
 
 ## Todo
 * Fix code for non Wifi model and Pico 1
-* Pictures, screenshots
 * Make putty line part of .sh
-* put alis into .sh (use source ./build.sh)
-* add assembly example
+* put alias into .sh (use source ./build.sh)
 * better keyboard handling, console?
 
 

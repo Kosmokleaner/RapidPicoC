@@ -26,8 +26,7 @@ or better use alias (todo: put in a new setup.sh)
 ```
 
 You can use the host PC keyboard and see the output in a window (latest code logs CPU):
-
-<img width="507" height="132" alt="puttyText" src="https://github.com/user-attachments/assets/9582c295-363f-4874-8e2f-24e1f6ad407f" />
+<img width="502" height="253" alt="puTTY" src="https://github.com/user-attachments/assets/7cd9350f-26f6-4de7-b30c-cfc8624d02bc" />
 
 ## Why Raspberry Pi Pico 2 W
 
